@@ -51,6 +51,7 @@ Quand tu listes des offres, donne toujours : entreprise, poste, ville.`
   }
 });
 
-app.listen(3000, () => {
-  console.log('🚀 NedwirAgent lancé sur http://localhost:3000');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`🚀 NedwirAgent lancé sur le port ${PORT}`);
 });
