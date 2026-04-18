@@ -12,16 +12,18 @@
       background: #0d0d0d;
       color: #fff;
       height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      transition: all 0.3s;
+    }
+
+    body.light {
+      background: #f5f5f5;
+      color: #111;
     }
 
     .app {
       display: flex;
       width: 100vw;
       height: 100vh;
-      background: #111;
     }
 
     /* SIDEBAR */
@@ -33,12 +35,22 @@
       flex-direction: column;
       padding: 16px;
       gap: 6px;
+      transition: all 0.3s;
+    }
+
+    body.light .sidebar {
+      background: #ffffff;
+      border-right: 1px solid #e0e0e0;
     }
 
     .logo-area {
       padding: 8px 0 16px;
       border-bottom: 1px solid #222;
       margin-bottom: 8px;
+    }
+
+    body.light .logo-area {
+      border-bottom: 1px solid #e0e0e0;
     }
 
     .logo-title {
@@ -49,6 +61,8 @@
       align-items: center;
       gap: 8px;
     }
+
+    body.light .logo-title { color: #111; }
 
     .logo-dot {
       width: 8px;
@@ -85,7 +99,10 @@
       width: 100%;
       text-align: left;
       transition: all 0.15s;
+      font-family: 'Segoe UI', sans-serif;
     }
+
+    body.light .nav-item { color: #666; }
 
     .nav-item.active {
       background: #1e1e1e;
@@ -93,18 +110,19 @@
       font-weight: 600;
     }
 
+    body.light .nav-item.active {
+      background: #f0f0f0;
+      color: #111;
+    }
+
     .nav-item:hover:not(.active) {
       background: #1a1a1a;
       color: #ccc;
     }
 
-    .nav-icon {
-      width: 16px;
-      height: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: inherit;
+    body.light .nav-item:hover:not(.active) {
+      background: #f5f5f5;
+      color: #333;
     }
 
     .badge {
@@ -125,11 +143,18 @@
       border: 1px solid #222;
     }
 
+    body.light .user-card {
+      background: #f0f0f0;
+      border: 1px solid #e0e0e0;
+    }
+
     .user-name {
       font-size: 12px;
       font-weight: 600;
       color: #fff;
     }
+
+    body.light .user-name { color: #111; }
 
     .user-sub {
       font-size: 11px;
@@ -152,6 +177,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      transition: all 0.3s;
+    }
+
+    body.light .topbar {
+      background: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
     }
 
     .topbar-title {
@@ -160,10 +191,18 @@
       color: #fff;
     }
 
+    body.light .topbar-title { color: #111; }
+
     .topbar-sub {
       font-size: 12px;
       color: #555;
       margin-top: 2px;
+    }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
     .status-pill {
@@ -191,6 +230,31 @@
       50% { opacity: 0.4; }
     }
 
+    .theme-btn {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      color: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    body.light .theme-btn {
+      background: #f0f0f0;
+      border: 1px solid #ddd;
+      color: #111;
+    }
+
+    /* PAGES */
+    .page { display: none; flex-direction: column; flex: 1; overflow: hidden; }
+    .page.active { display: flex; }
+
     /* STATS */
     .stat-row {
       display: grid;
@@ -200,6 +264,8 @@
       border-bottom: 1px solid #1e1e1e;
     }
 
+    body.light .stat-row { border-bottom: 1px solid #e0e0e0; }
+
     .stat {
       background: #161616;
       border: 1px solid #222;
@@ -207,11 +273,18 @@
       padding: 10px 14px;
     }
 
+    body.light .stat {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+    }
+
     .stat-num {
       font-size: 20px;
       font-weight: 700;
       color: #fff;
     }
+
+    body.light .stat-num { color: #111; }
 
     .stat-label {
       font-size: 11px;
@@ -263,6 +336,11 @@
       color: #00c47d;
     }
 
+    body.light .avatar.bot {
+      background: #f0f0f0;
+      border: 1px solid #ddd;
+    }
+
     .avatar.user {
       background: #00c47d;
       color: #000;
@@ -283,6 +361,12 @@
       border-bottom-left-radius: 4px;
     }
 
+    body.light .bubble.bot {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      color: #333;
+    }
+
     .bubble.user {
       background: #00c47d;
       color: #000;
@@ -291,6 +375,7 @@
     }
 
     .bubble strong { font-weight: 700; color: #fff; }
+    body.light .bubble.bot strong { color: #111; }
     .bubble.user strong { color: #000; }
 
     /* SUGGESTIONS */
@@ -301,6 +386,11 @@
       flex-wrap: wrap;
       border-top: 1px solid #1e1e1e;
       background: #161616;
+    }
+
+    body.light .suggestions-bar {
+      background: #fff;
+      border-top: 1px solid #e0e0e0;
     }
 
     .chip {
@@ -315,10 +405,20 @@
       font-family: 'Segoe UI', sans-serif;
     }
 
+    body.light .chip {
+      border: 1px solid #ddd;
+      color: #666;
+    }
+
     .chip:hover {
       background: #1e1e1e;
       color: #fff;
       border-color: #444;
+    }
+
+    body.light .chip:hover {
+      background: #f0f0f0;
+      color: #111;
     }
 
     /* INPUT */
@@ -329,6 +429,11 @@
       display: flex;
       gap: 10px;
       align-items: center;
+    }
+
+    body.light .input-row {
+      background: #fff;
+      border-top: 1px solid #e0e0e0;
     }
 
     .input-row input {
@@ -344,8 +449,15 @@
       transition: border 0.2s;
     }
 
+    body.light .input-row input {
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      color: #111;
+    }
+
     .input-row input:focus { border-color: #00c47d; }
     .input-row input::placeholder { color: #444; }
+    body.light .input-row input::placeholder { color: #aaa; }
 
     .send-btn {
       width: 38px;
@@ -362,6 +474,98 @@
     }
 
     .send-btn:hover { background: #00a066; transform: scale(1.05); }
+
+    /* PROFIL PAGE */
+    .profil-area {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px;
+    }
+
+    .profil-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    body.light .profil-title { color: #111; }
+
+    .profil-card {
+      background: #161616;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 600px;
+    }
+
+    body.light .profil-card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-label {
+      font-size: 12px;
+      color: #888;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .form-input {
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid #2a2a2a;
+      background: #111;
+      color: #fff;
+      font-size: 13px;
+      font-family: 'Segoe UI', sans-serif;
+      outline: none;
+      transition: border 0.2s;
+    }
+
+    body.light .form-input {
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      color: #111;
+    }
+
+    .form-input:focus { border-color: #00c47d; }
+
+    .save-btn {
+      background: #00c47d;
+      border: none;
+      color: #000;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: 'Segoe UI', sans-serif;
+      transition: all 0.2s;
+      align-self: flex-start;
+    }
+
+    .save-btn:hover { background: #00a066; transform: scale(1.02); }
+
+    .profil-saved {
+      display: none;
+      background: #0e3a28;
+      color: #00c47d;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+    }
 
     /* TYPING */
     .typing {
@@ -404,58 +608,48 @@
 
     <div class="section-label">Navigation</div>
 
-    <button class="nav-item active">
-      <div class="nav-icon">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="1" y="1" width="14" height="14" rx="2"/>
-          <path d="M4 8h8M4 5h8M4 11h5"/>
-        </svg>
-      </div>
+    <button class="nav-item active" onclick="showPage('assistant', this)">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="1" y="1" width="14" height="14" rx="2"/>
+        <path d="M4 8h8M4 5h8M4 11h5"/>
+      </svg>
       Assistant
     </button>
 
-    <button class="nav-item">
-      <div class="nav-icon">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-          <circle cx="8" cy="5" r="3"/>
-          <path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
-        </svg>
-      </div>
+    <button class="nav-item" onclick="showPage('profil', this)">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="8" cy="5" r="3"/>
+        <path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+      </svg>
       Mon profil
     </button>
 
-    <button class="nav-item">
-      <div class="nav-icon">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="2" y="4" width="12" height="9" rx="1"/>
-          <path d="M5 4V3a1 1 0 011-1h4a1 1 0 011 1v1"/>
-        </svg>
-      </div>
+    <button class="nav-item" onclick="showPage('offres', this)">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="2" y="4" width="12" height="9" rx="1"/>
+        <path d="M5 4V3a1 1 0 011-1h4a1 1 0 011 1v1"/>
+      </svg>
       Offres sauvegardées
-      <span class="badge">12</span>
+      <span class="badge" id="badgeOffres">0</span>
     </button>
 
-    <button class="nav-item">
-      <div class="nav-icon">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M14 10c0 2.2-1.8 4-4 4H3L1 16V4c0-2.2 1.8-4 4-4h5c2.2 0 4 1.8 4 4v6z"/>
-        </svg>
-      </div>
+    <button class="nav-item" onclick="suggest('Prépare-moi pour un entretien technique en informatique'); showPage(\'assistant\', document.querySelector(\'.nav-item\'))">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M14 10c0 2.2-1.8 4-4 4H3L1 16V4c0-2.2 1.8-4 4-4h5c2.2 0 4 1.8 4 4v6z"/>
+      </svg>
       Entretiens simulés
     </button>
 
-    <button class="nav-item">
-      <div class="nav-icon">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M3 4h10M3 8h10M3 12h6"/>
-        </svg>
-      </div>
+    <button class="nav-item" onclick="suggest('Génère un CV professionnel pour moi'); showPage(\'assistant\', document.querySelector(\'.nav-item\'))">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M3 4h10M3 8h10M3 12h6"/>
+      </svg>
       Mes CV
     </button>
 
     <div class="user-card">
-      <div class="user-name">Mamadou Ciré</div>
-      <div class="user-sub">Informatique · Oujda</div>
+      <div class="user-name" id="userName">Mamadou Ciré</div>
+      <div class="user-sub" id="userSub">Informatique · Oujda</div>
     </div>
   </div>
 
@@ -464,59 +658,107 @@
 
     <div class="topbar">
       <div>
-        <div class="topbar-title">Assistant emploi</div>
-        <div class="topbar-sub">Powered by Gemini AI</div>
+        <div class="topbar-title" id="topbarTitle">Assistant emploi</div>
+        <div class="topbar-sub">Powered by LLaMA 3.3 via Groq</div>
       </div>
-      <div class="status-pill">
-        <div class="status-dot"></div>
-        En ligne
-      </div>
-    </div>
-
-    <div class="stat-row">
-      <div class="stat">
-        <div class="stat-num" id="statOffres">247</div>
-        <div class="stat-label">Offres disponibles</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">18</div>
-        <div class="stat-label">Nouvelles aujourd'hui</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num" id="statCandidatures">0</div>
-        <div class="stat-label">Candidatures envoyées</div>
-      </div>
-    </div>
-
-    <div class="chat-area" id="chatArea">
-      <div class="msg">
-        <div class="avatar bot">N</div>
-        <div class="bubble bot">
-          Salam ! Je suis <strong>NedwirAgent</strong>, ton assistant autonome de recherche d'emploi au Maroc.<br><br>
-          Je peux t'aider à trouver des offres adaptées à ton profil, optimiser ton CV, simuler un entretien ou rédiger une lettre de motivation. Par où on commence ?
+      <div class="topbar-right">
+        <button class="theme-btn" onclick="toggleTheme()" title="Changer le thème">🌙</button>
+        <div class="status-pill">
+          <div class="status-dot"></div>
+          En ligne
         </div>
       </div>
     </div>
 
-    <div class="suggestions-bar">
-      <button class="chip" onclick="suggest('Je cherche un stage en informatique à Oujda')">💻 Stage informatique</button>
-      <button class="chip" onclick="suggest('Améliore mon CV')">📄 Améliorer mon CV</button>
-      <button class="chip" onclick="suggest('Prépare-moi pour un entretien technique')">🎯 Simuler entretien</button>
-      <button class="chip" onclick="suggest('Rédige une lettre de motivation pour OCP')">✉️ Lettre motivation</button>
+    <!-- PAGE ASSISTANT -->
+    <div class="page active" id="page-assistant">
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-num">247</div>
+          <div class="stat-label">Offres disponibles</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">18</div>
+          <div class="stat-label">Nouvelles aujourd'hui</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" id="statCandidatures">0</div>
+          <div class="stat-label">Candidatures envoyées</div>
+        </div>
+      </div>
+
+      <div class="chat-area" id="chatArea">
+        <div class="msg">
+          <div class="avatar bot">N</div>
+          <div class="bubble bot">
+            Salam ! Je suis <strong>NedwirAgent</strong>, ton assistant autonome de recherche d'emploi au Maroc.<br><br>
+            Je peux t'aider à trouver des offres adaptées à ton profil, optimiser ton CV, simuler un entretien ou rédiger une lettre de motivation.<br><br>
+            💡 <strong>Conseil :</strong> Remplis ton profil pour que je puisse personnaliser mes réponses !
+          </div>
+        </div>
+      </div>
+
+      <div class="suggestions-bar">
+        <button class="chip" onclick="suggest('Je cherche un stage en informatique à Oujda')">💻 Stage informatique</button>
+        <button class="chip" onclick="suggest('Améliore mon CV pour un poste de développeur web')">📄 Améliorer mon CV</button>
+        <button class="chip" onclick="suggest('Prépare-moi pour un entretien technique')">🎯 Simuler entretien</button>
+        <button class="chip" onclick="suggest('Rédige une lettre de motivation pour OCP Digital')">✉️ Lettre motivation</button>
+      </div>
+
+      <div class="input-row">
+        <input
+          type="text"
+          id="userInput"
+          placeholder="Écris ton message..."
+          onkeydown="if(event.key==='Enter') sendMessage()"
+        />
+        <button class="send-btn" onclick="sendMessage()">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="white">
+            <path d="M1 1l14 7-14 7V9.5l10-1.5-10-1.5V1z"/>
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <div class="input-row">
-      <input
-        type="text"
-        id="userInput"
-        placeholder="Écris ton message..."
-        onkeydown="if(event.key==='Enter') sendMessage()"
-      />
-      <button class="send-btn" onclick="sendMessage()">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="white">
-          <path d="M1 1l14 7-14 7V9.5l10-1.5-10-1.5V1z"/>
-        </svg>
-      </button>
+    <!-- PAGE PROFIL -->
+    <div class="page" id="page-profil">
+      <div class="profil-area">
+        <div class="profil-title">👤 Mon Profil</div>
+        <div class="profil-card">
+          <div class="form-group">
+            <label class="form-label">Nom complet</label>
+            <input type="text" class="form-input" id="pNom" placeholder="Ex: Mamadou Ciré Diallo" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Niveau d'études</label>
+            <input type="text" class="form-input" id="pNiveau" placeholder="Ex: Licence 3, Master 1..." />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Domaine</label>
+            <input type="text" class="form-input" id="pDomaine" placeholder="Ex: Informatique, Génie Civil..." />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Compétences</label>
+            <input type="text" class="form-input" id="pCompetences" placeholder="Ex: JavaScript, Python, C++..." />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Ville</label>
+            <input type="text" class="form-input" id="pVille" placeholder="Ex: Oujda, Casablanca..." />
+          </div>
+          <button class="save-btn" onclick="saveProfil()">💾 Sauvegarder le profil</button>
+          <div class="profil-saved" id="profilSaved">✅ Profil sauvegardé ! L'agent va maintenant personnaliser ses réponses.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE OFFRES -->
+    <div class="page" id="page-offres">
+      <div class="profil-area">
+        <div class="profil-title">💼 Offres sauvegardées</div>
+        <div id="offresList" style="display:flex; flex-direction:column; gap:12px; max-width:600px;">
+          <div style="color:#555; font-size:13px;">Aucune offre sauvegardée pour l'instant. Demande à l'agent de trouver des offres et sauvegarde-les ici !</div>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -525,6 +767,37 @@
 <script>
   let history = [];
   let candidatures = 0;
+  let profil = null;
+  let isDark = true;
+
+  function toggleTheme() {
+    isDark = !isDark;
+    document.body.classList.toggle('light', !isDark);
+    document.querySelector('.theme-btn').textContent = isDark ? '🌙' : '☀️';
+  }
+
+  function showPage(name, btn) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.getElementById('page-' + name).classList.add('active');
+    if(btn) btn.classList.add('active');
+    const titles = { assistant: 'Assistant emploi', profil: 'Mon Profil', offres: 'Offres sauvegardées' };
+    document.getElementById('topbarTitle').textContent = titles[name] || 'NedwirAgent';
+  }
+
+  function saveProfil() {
+    profil = {
+      nom: document.getElementById('pNom').value,
+      niveau: document.getElementById('pNiveau').value,
+      domaine: document.getElementById('pDomaine').value,
+      competences: document.getElementById('pCompetences').value,
+      ville: document.getElementById('pVille').value
+    };
+    document.getElementById('userName').textContent = profil.nom || 'Mamadou Ciré';
+    document.getElementById('userSub').textContent = (profil.domaine || 'Informatique') + ' · ' + (profil.ville || 'Oujda');
+    document.getElementById('profilSaved').style.display = 'block';
+    setTimeout(() => document.getElementById('profilSaved').style.display = 'none', 3000);
+  }
 
   async function sendMessage() {
     const input = document.getElementById('userInput');
@@ -539,7 +812,7 @@
       const response = await fetch('/api/agent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message, history })
+        body: JSON.stringify({ message, history, profil })
       });
 
       const data = await response.json();
@@ -556,16 +829,17 @@
           document.getElementById('statCandidatures').textContent = candidatures;
         }
       } else {
-        addMessage('Erreur : ' + data.error, 'bot');
+        addMessage('❌ Erreur : ' + data.error, 'bot');
       }
     } catch (err) {
       removeTyping();
-      addMessage('Connexion impossible au serveur. Lance node server.js dans ton terminal.', 'bot');
+      addMessage('❌ Connexion impossible. Lance node server.js dans le terminal.', 'bot');
     }
   }
 
   function suggest(text) {
     document.getElementById('userInput').value = text;
+    showPage('assistant', document.querySelectorAll('.nav-item')[0]);
     sendMessage();
   }
 
@@ -576,7 +850,7 @@
     const initial = sender === 'bot' ? 'N' : 'M';
     div.innerHTML = `
       <div class="avatar ${sender}">${initial}</div>
-      <div class="bubble ${sender}">${text.replace(/\n/g, '<br>')}</div>
+      <div class="bubble ${sender}">${text.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</div>
     `;
     chatArea.appendChild(div);
     chatArea.scrollTop = chatArea.scrollHeight;
